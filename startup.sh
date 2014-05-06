@@ -13,6 +13,8 @@ echo "ubuntu:$PASS" | chpasswd
 
 cd /tty.js && node ./tty-me.js --daemonize
 
+/usr/sbin/mysqld
+
 while [ 1 ]; do
     /bin/bash
 done
