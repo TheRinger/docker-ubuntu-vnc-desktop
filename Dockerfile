@@ -63,6 +63,5 @@ EXPOSE 6080
 EXPOSE 5900
 EXPOSE 3000
 EXPOSE 22
-CMD ["/bin/bash", "/opt/startup.sh"]
-# WORKDIR /
-# ENTRYPOINT ["/startup.sh"]
+WORKDIR /
+ENTRYPOINT ["/opt/startup.sh"]
