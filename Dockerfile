@@ -56,12 +56,13 @@ ADD noVNC /noVNC/
 RUN apt-get clean
 #RUN rm /etc/apt/apt.conf.d/90apt-cacher-ng
 
-ADD startup.sh /
-ADD supervisord.conf /
+ADD startup.sh /opt/startup.sh
+ADD supervisord.conf /opt/supervisord.conf
 EXPOSE 3306
 EXPOSE 6080
 EXPOSE 5900
 EXPOSE 3000
 EXPOSE 22
-WORKDIR /
-ENTRYPOINT ["/startup.sh"]
+CMD ["/bin/bash", "/opt/startup.sh"]
+# WORKDIR /
+# ENTRYPOINT ["/startup.sh"]

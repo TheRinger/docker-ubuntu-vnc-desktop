@@ -9,11 +9,14 @@ echo "User: ubuntu Pass: $PASS"
 useradd --create-home --shell /bin/bash --user-group --groups adm,sudo ubuntu
 echo "ubuntu:$PASS" | chpasswd
 
-/usr/bin/supervisord -c /supervisord.conf
+/usr/bin/supervisord -c /opt/supervisord.conf
 
 cd /tty.js && node ./tty-me.js --daemonize
 
-/usr/sbin/mysqld
+# /usr/sbin/mysqld
+/usr/bin/mysqld_safe &
+
+echo "Ready"
 
 while [ 1 ]; do
     /bin/bash
