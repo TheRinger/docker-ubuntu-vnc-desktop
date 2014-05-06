@@ -13,8 +13,6 @@ echo "ubuntu:$PASS" | chpasswd
 
 cd /tty.js && node ./tty-me.js --daemonize
 
-/usr/bin/mysqld_safe &
-
 ## Grab the latest workshop files
 su -c "git clone https://github.com/dimsumlabs/ml_workshop.git /home/ubuntu/ml_workshop" ubuntu
 
